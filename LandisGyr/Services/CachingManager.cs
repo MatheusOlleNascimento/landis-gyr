@@ -27,9 +27,7 @@ namespace LandisGyr.Services
         internal ConsumerUnit? FindConsumerUnitFromCache(string serialNumber)
         {
             ICollection<ConsumerUnit> consumerUnits = GetConsumerUnitsFromCache();
-            return consumerUnits.Any()
-                ? consumerUnits.FirstOrDefault(c => c.SerialNumber == serialNumber)
-                : throw new ArgumentNullException("Endpoint not found");
+            return consumerUnits.FirstOrDefault(c => c.SerialNumber == serialNumber);
         }
 
         internal void AddConsumerUnitToCache(ConsumerUnit consumerUnit)

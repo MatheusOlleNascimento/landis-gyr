@@ -8,6 +8,8 @@ namespace LandisGyr.Controllers
 {
     //ToDo fix returns, verify status in cache and return this
     //ToDo refactor code FindConsumerUnitFromCache logic duplicate a lot
+    //ToDo create validate inputs
+    //ToDo create Dtos
 
     [ApiController]
     [Route("api/[controller]")]
@@ -22,7 +24,7 @@ namespace LandisGyr.Controllers
         {
             ConsumerUnit? consumerUnitFinded = FindConsumerUnitFromCache(consumerUnit.SerialNumber);
             if (consumerUnitFinded != null) throw new InvalidOperationException("This serial number is already in use");
-            
+
             AddConsumerUnitToCache(consumerUnit);
 
             return true;
@@ -58,16 +60,17 @@ namespace LandisGyr.Controllers
         }
 
         // Essa opção imprimirá na tela todos os detalhes de todos os endpoints
-        [HttpGet("list")] 
+        [HttpGet("list")]
         public ICollection<ConsumerUnit> ListConsumerUnits() => GetConsumerUnitsFromCache();
 
         // Solicitará primeiro que o usuário insira um "Número de série do ponto final"
         // Localizará o ponto final com o "Endpoint Serial Number" fornecido(ou fornecerá uma mensagem de erro se ele não for encontrado)
         // Imprimirá na tela todos os detalhes do ponto final
         [HttpGet("find")]
-        public ConsumerUnit FindConsumerUnit(string serialNumber) {
+        public ConsumerUnit FindConsumerUnit(string serialNumber)
+        {
             ConsumerUnit? consumerUnit = FindConsumerUnitFromCache(serialNumber);
-            
+
             return consumerUnit ?? throw new ArgumentNullException("ConsumerUnit not found");
         }
     }

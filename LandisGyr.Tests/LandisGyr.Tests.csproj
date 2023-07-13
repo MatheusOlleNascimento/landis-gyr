@@ -26,8 +26,4 @@
     <ProjectReference Include="..\LandisGyr\LandisGyr.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mocks\" />
-  </ItemGroup>
-
 </Project>
