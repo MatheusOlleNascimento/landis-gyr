@@ -5,6 +5,12 @@ C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\LandisGyr.deps.
 C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\LandisGyr.runtimeconfig.json
 C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\LandisGyr.dll
 C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\LandisGyr.pdb
+C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Ifsul\source\repos\LandisGyr\LandisGyr\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll

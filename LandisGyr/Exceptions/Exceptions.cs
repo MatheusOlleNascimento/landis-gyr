@@ -1,7 +1,6 @@
 ﻿namespace LandisGyr.Exceptions
 {
-    [Serializable]
-    public class RequestExceptions : Exception
+    public class Exceptions 
     {
         //ToDo create customs exceptions
     }
