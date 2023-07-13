@@ -1,11 +1,14 @@
 ﻿using LandisGyr.Models;
 using Microsoft.Extensions.Caching.Memory;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("LandisGyr.Tests")]
 
 namespace LandisGyr.Services
 {
     public class CachingManager
     {
-        private readonly IMemoryCache _memoryCache;
+        internal readonly IMemoryCache _memoryCache;
 
         internal CachingManager(IMemoryCache cacheProvider)
         {

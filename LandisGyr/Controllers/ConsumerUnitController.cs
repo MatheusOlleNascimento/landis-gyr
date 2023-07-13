@@ -6,6 +6,9 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace LandisGyr.Controllers
 {
+    //ToDo fix returns, verify status in cache and return this
+    //ToDo refactor code FindConsumerUnitFromCache logic duplicate a lot
+
     [ApiController]
     [Route("api/[controller]")]
     public class ConsumerUnitController : CachingManager
@@ -46,7 +49,9 @@ namespace LandisGyr.Controllers
         [HttpDelete("delete")]
         public bool DeleteConsumerUnit(string serialNumber)
         {
-            FindConsumerUnitFromCache(serialNumber);
+            ConsumerUnit? consumerUnit = FindConsumerUnitFromCache(serialNumber);
+            if (consumerUnit == null) throw new ArgumentNullException("ConsumerUnit not found");
+
             RemoveConsumerUnitFromCache(serialNumber);
 
             return true;
@@ -56,10 +61,14 @@ namespace LandisGyr.Controllers
         [HttpGet("list")] 
         public ICollection<ConsumerUnit> ListConsumerUnits() => GetConsumerUnitsFromCache();
 
-        // Essa opção solicitará primeiro que o usuário insira um "Endpoint Serial Number" (número de série do ponto final)
+        // Solicitará primeiro que o usuário insira um "Número de série do ponto final"
         // Localizará o ponto final com o "Endpoint Serial Number" fornecido(ou fornecerá uma mensagem de erro se ele não for encontrado)
         // Imprimirá na tela todos os detalhes do ponto final
         [HttpGet("find")]
-        public ConsumerUnit? FindConsumerUnit(string serialNumber) => FindConsumerUnitFromCache(serialNumber);
+        public ConsumerUnit FindConsumerUnit(string serialNumber) {
+            ConsumerUnit? consumerUnit = FindConsumerUnitFromCache(serialNumber);
+            
+            return consumerUnit ?? throw new ArgumentNullException("ConsumerUnit not found");
+        }
     }
 }
