@@ -17,8 +17,6 @@ namespace LandisGyr.Controllers
     {
         public ConsumerUnitController(IMemoryCache cacheProvider) : base(cacheProvider) { }
 
-        // Solicitará que o usuário insira todos os atributos de um endpoint e o armazene
-        // Se já existir "Número de série do endpoint", uma mensagem de erro deverá ser exibida
         [HttpPost("insert")]
         public bool CreateConsumerUnit(ConsumerUnit consumerUnit)
         {
@@ -30,9 +28,6 @@ namespace LandisGyr.Controllers
             return true;
         }
 
-        // Solicitará primeiro que o usuário insira um "Número de série do ponto final"
-        // Localizará um endpoint com o "Endpoint Serial Number" fornecido(ou exibirá uma mensagem de erro se ele não for encontrado)
-        // Dará ao usuário a opção de alterar apenas o "Estado do interruptor"
         [HttpPut("edit")]
         public bool EditConsumerUnit(string serialNumber, SwitchState switchState) //ToDo create a DTO
         {
@@ -45,9 +40,6 @@ namespace LandisGyr.Controllers
             return true;
         }
 
-        // Solicitará primeiro que o usuário insira um "Número de série do ponto final"
-        // Localizará um endpoint com o "Endpoint Serial Number" fornecido(ou exibirá uma mensagem de erro se ele não for encontrado)
-        // Solicitará a confirmação do usuário e excluirá o endpoint
         [HttpDelete("delete")]
         public bool DeleteConsumerUnit(string serialNumber)
         {
@@ -59,13 +51,9 @@ namespace LandisGyr.Controllers
             return true;
         }
 
-        // Essa opção imprimirá na tela todos os detalhes de todos os endpoints
         [HttpGet("list")]
         public ICollection<ConsumerUnit> ListConsumerUnits() => GetConsumerUnitsFromCache();
 
-        // Solicitará primeiro que o usuário insira um "Número de série do ponto final"
-        // Localizará o ponto final com o "Endpoint Serial Number" fornecido(ou fornecerá uma mensagem de erro se ele não for encontrado)
-        // Imprimirá na tela todos os detalhes do ponto final
         [HttpGet("find")]
         public ConsumerUnit FindConsumerUnit(string serialNumber)
         {
