@@ -1,6 +1,6 @@
 ﻿namespace LandisGyr.Interfaces
 {
-    interface IEndpoint { 
-        
+    interface CacheController
+    {
     }
 }
